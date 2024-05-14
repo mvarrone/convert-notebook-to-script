@@ -39,6 +39,10 @@ def main() -> None:
         print(f"The input folder '{input_folder}' does not exist.")
         return
 
+    if not os.listdir(input_folder):
+        print(f"No .ipynb files inside folder called {input_folder}")
+        return
+
     # Process each .ipynb file in the input folder
     for notebook_file in os.listdir(input_folder):
         if notebook_file.endswith(".ipynb"):
